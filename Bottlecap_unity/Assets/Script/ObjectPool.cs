@@ -6,11 +6,10 @@ public class ObjectPool : MonoBehaviour
 {
     public float radius;
     public float probability;
-
-    // change the type to the object
+    public int poolMax;
     GameObject objectToPool;
     List<GameObject> PoolofObject;
-
+    // Start is called before the first frame update
     void Start()
     {
         PoolofObject = new List<GameObject>();
@@ -19,13 +18,7 @@ public class ObjectPool : MonoBehaviour
             //needs the prefab
             GameObject g = Instantiate(objectToPool, this.transform);
             g.SetActive(false);
-            objects.Add(g);
+            PoolofObject.Add(g);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
